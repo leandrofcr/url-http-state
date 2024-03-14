@@ -3,7 +3,7 @@ import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-export function ProductsFilterForm() {
+export function ProductsFilters() {
   return (
     <form className="flex items-center gap-2">
       <Input name="id" placeholder="ID do produto" />
