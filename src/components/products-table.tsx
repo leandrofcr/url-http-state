@@ -6,6 +6,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { products } from "@/data/products";
+import { formatCurrency } from "@/util/functions";
 
 export function ProductsTable() {
   return (
@@ -18,11 +20,11 @@ export function ProductsTable() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {Array.from({ length: 10 }).map((_, i) => (
-          <TableRow key={i}>
-            <TableCell>82s8sdsd213s</TableCell>
-            <TableCell>Produto {i}</TableCell>
-            <TableCell>R$ 198,00</TableCell>
+        {products.map((product) => (
+          <TableRow key={product.id}>
+            <TableCell>{product.id}</TableCell>
+            <TableCell>{product.name}</TableCell>
+            <TableCell>{formatCurrency(product.price)}</TableCell>
           </TableRow>
         ))}
       </TableBody>
