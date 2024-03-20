@@ -17,7 +17,7 @@ export function App() {
           <DialogTrigger asChild>
             <Button>
               <PlusCircle className="size-4 mr-2" />
-              Novo product
+              Novo produto
             </Button>
           </DialogTrigger>
 
