@@ -1,12 +1,12 @@
 import { PlusCircle } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
 
 import { CreateProductDialog } from "@/components/create-product-dialog";
 import { ProductsFilters } from "@/components/products-filters";
 import { ProductsTable } from "@/components/products-table";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "./data/products";
+import { getProducts } from "@/data/products";
 
 export function App() {
   const { data: products } = useQuery({
