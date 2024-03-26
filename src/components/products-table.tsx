@@ -10,7 +10,7 @@ import { Product } from "@/data/products";
 import { formatCurrency } from "@/util/functions";
 
 interface Props {
-  products: Product[] | undefined;
+  products: Product[];
 }
 
 export function ProductsTable({ products }: Props) {
