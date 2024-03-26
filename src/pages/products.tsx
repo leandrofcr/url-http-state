@@ -1,4 +1,5 @@
 import { PlusCircle } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 import { CreateProductDialog } from "@/components/create-product-dialog";
@@ -9,9 +10,14 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { getProducts } from "@/data/products";
 
 export function Products() {
+  const [searchParams] = useSearchParams();
+
+  const id = searchParams.get("id");
+  const name = searchParams.get("name");
+
   const { data: products } = useQuery({
-    queryFn: getProducts,
-    queryKey: ["products"],
+    queryKey: ["products", id, name],
+    queryFn: () => getProducts({ id, name }),
   });
 
   return (
@@ -33,7 +39,7 @@ export function Products() {
       </div>
 
       <div className="border rounded-lg p-2">
-        {products?.length && <ProductsTable data={products} />}
+        <ProductsTable data={products} />
       </div>
     </div>
   );
