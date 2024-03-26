@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { getProducts } from "@/data/products";
 
-export function App() {
+export function Products() {
   const { data: products } = useQuery({
     queryFn: getProducts,
     queryKey: ["products"],
@@ -33,7 +33,7 @@ export function App() {
       </div>
 
       <div className="border rounded-lg p-2">
-        <ProductsTable products={products} />
+        {products?.length && <ProductsTable data={products} />}
       </div>
     </div>
   );

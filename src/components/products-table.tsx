@@ -10,10 +10,10 @@ import { Product } from "@/data/products";
 import { formatCurrency } from "@/util/functions";
 
 interface Props {
-  products: Product[];
+  data: Product[];
 }
 
-export function ProductsTable({ products }: Props) {
+export function ProductsTable({ data }: Props) {
   return (
     <Table>
       <TableHeader>
@@ -24,7 +24,7 @@ export function ProductsTable({ products }: Props) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {products?.map((product: Product) => (
+        {data?.map((product: Product) => (
           <TableRow key={product.id}>
             <TableCell>{product.id}</TableCell>
             <TableCell>{product.name}</TableCell>
