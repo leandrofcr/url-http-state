@@ -6,13 +6,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Product } from "@/data/products";
 import { formatCurrency } from "@/util/functions";
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-}
 
 interface Props {
   products: Product[] | undefined;

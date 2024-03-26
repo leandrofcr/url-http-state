@@ -1,3 +1,9 @@
+export interface Product {
+  id: string,
+  name: string,
+  price: number
+}
+
 export async function getProducts() {
   //delay 1s
   await new Promise(resolve => setTimeout(resolve, 1000))
@@ -25,4 +31,20 @@ export async function getProducts() {
     // { id: 574378, name: 'Green Pants', price: 46.61 }
   ]
 
+}
+
+interface CreateProductRequest {
+  name: string,
+  price: number
+}
+
+export async function createProduct(data: CreateProductRequest) {
+  //delay 1s
+  await new Promise(resolve => setTimeout(resolve, 1000))
+
+  return {
+    id: crypto.randomUUID(),
+    name: data.name,
+    price: data.price,
+  }
 }
